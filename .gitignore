@@ -1,0 +1,6 @@
+# Ignore Visual Studio / VS Code hidden folders
+.vs/
+.vscode/
+
+# Ignore the project assignment PDF
+ProjeOdevi.pdf

@@ -1,0 +1,14 @@
+/* style.css - Custom CSS for the Web Technologies Project */
+
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Add some padding to the main content so it doesn't stick to the header/footer */
+main {
+    padding-bottom: 2rem;
+}
