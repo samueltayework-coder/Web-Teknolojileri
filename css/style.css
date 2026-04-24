@@ -12,3 +12,37 @@ body {
 main {
     padding-bottom: 2rem;
 }
+
+/* --- Day 2: About Page Styles --- */
+.about-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.profile-img {
+    border: 5px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.profile-img:hover {
+    transform: scale(1.05);
+}
+.hobby-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.hobby-icon {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
