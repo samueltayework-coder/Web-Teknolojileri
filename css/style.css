@@ -1,6 +1,6 @@
-/* style.css - Custom CSS for the Web Technologies Project */
+/* style.css - Web Teknolojileri Projesi için Özel CSS */
 
-/* Import Google Fonts for better typography */
+/* Daha iyi tipografi için Google Fonts içe aktarımı */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 body {
@@ -8,12 +8,12 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Add some padding to the main content so it doesn't stick to the header/footer */
+/* Ana içeriğe boşluk ekleyerek üst/alt kısımlara yapışmasını engelle */
 main {
     padding-bottom: 2rem;
 }
 
-/* --- Day 2: About Page Styles --- */
+/* --- Gün 2: Hakkında Sayfası Stilleri --- */
 .about-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
