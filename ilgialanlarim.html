@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlgi Alanlarım - API Entegrasyonu</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ilgialanlarim.css">
+
+    <style>
+        /* ── HEADER ── */
+        .api-header {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 40px !important;
+            margin-bottom: 40px;
+        }
+
+        .api-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(255, 100, 60, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(100, 80, 255, 0.22) 0%, transparent 55%);
+            pointer-events: none;
+        }
+
+        .api-header::after {
+            content: '▶';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 220px;
+            color: rgba(255,255,255,0.03);
+            pointer-events: none;
+            font-family: sans-serif;
+        }
+
+        .api-header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 0 0 40px rgba(255, 120, 80, 0.5);
+            margin-bottom: 12px;
+        }
+
+        .api-header .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b3d, #9b59b6);
+            border-radius: 2px;
+            margin: 0 auto 20px;
+        }
+
+        .api-header p {
+            font-family: 'Nunito', sans-serif;
+            color: rgba(255,255,255,0.75);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .api-header p strong {
+            color: #ff6b3d;
+        }
+
+        .api-header .badge-api {
+            display: inline-block;
+            background: rgba(255,107,61,0.15);
+            border: 1px solid rgba(255,107,61,0.4);
+            color: #ff6b3d;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* ── LOADER ── */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        .spinner {
+            width: 50px; height: 50px;
+            border: 5px solid #e9ecef;
+            border-top-color: #ff6b3d;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── CARDS ── */
+        .show-card {
+            background: #1a1a2e;
+            border-radius: 14px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .show-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(255,107,61,0.25);
+        }
+        .show-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .show-image-container img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .show-card:hover .show-image-container img {
+            transform: scale(1.05);
+        }
+        .show-rating {
+            position: absolute;
+            top: 10px; right: 10px;
+            background: rgba(255,107,61,0.9);
+            color: #fff;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .show-info {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .show-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .show-genres {
+            margin-bottom: 10px;
+        }
+        .genre-badge {
+            display: inline-block;
+            background: rgba(155, 89, 182, 0.2);
+            border: 1px solid rgba(155, 89, 182, 0.4);
+            color: #c39bd3;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 9px;
+            border-radius: 12px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .show-summary {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .show-link {
+            display: inline-block;
+            margin-top: 14px;
+            background: linear-gradient(90deg, #ff6b3d, #9b59b6);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 7px 18px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
+            align-self: flex-start;
+        }
+        .show-link:hover { opacity: 0.85; color: #fff; }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Menü (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Portfolyom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik Alanı -->
+    <main class="flex-grow-1">
+        <div class="container mt-5">
+
+            <!-- Başlık Bölümü -->
+            <div class="row api-header align-items-center text-center">
+                <div class="col-12">
+                    <div class="badge-api">TVMaze API</div>
+                    <h1>İlgi Alanlarım: Favori Dizilerim</h1>
+                    <div class="accent-line"></div>
+                    <p>En sevdiğim televizyon dizilerini ücretsiz bir API olan <strong>TVMaze API</strong> aracılığıyla çekiyor ve burada listeliyorum.</p>
+                </div>
+            </div>
+
+            <!-- Loader -->
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Hata Mesajı -->
+            <div id="error-message" class="alert alert-danger d-none text-center" role="alert">
+                Dizi verileri yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.
+            </div>
+
+            <!-- Dizi Kartları -->
+            <div class="row g-4 mb-5" id="shows-container" style="display: none;"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Tüm Hakları Saklıdır. Web Teknolojileri Projesi.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Favori dizilerin TVMaze ID'leri
+            // 82: Game of Thrones, 170: Orange is the New Black, 169: Breaking Bad,
+            // 526: The Office, 2993: Stranger Things, 66: The Big Bang Theory,
+            // 618: Better Call Saul, 216: Rick and Morty
+            const showIds = [82, 170, 169, 526, 2993, 66, 618, 216];
+
+            // Türkçe açıklamalar (TVMaze ID'ye göre)
+            const turkishSummaries = {
+                82:   "Westeros kıtasında geçen bu destansı dizi; güç, entrika ve hayatta kalma mücadelesiyle birbirine bağlı soylu aileler, savaşçılar ve büyücülerin hikâyesini anlatır.",
+                170:  "Piper Chapman, on yıl önce uyuşturucu kaçakçılığına karışmasının bedelini ödemek üzere 15 aylık hapis cezasına çarptırılır. Litchfield Kadın Cezaevi'ndeki zorlu ve bazen komik hayatını konu alan sürükleyici bir dizi.",
+                169:  "Lise kimya öğretmeni Walter White, kanser teşhisiyle hayatının alt üst olmasının ardından öğrencisi Jesse Pinkman ile uyuşturucu dünyasına adım atar. Giderek büyüyen bir gerilim şaheseri.",
+                526:  "Scranton, Pennsylvania'daki sıradan bir kâğıt şirketinin çalışanlarının günlük hayatını konu alan bu mockümenter komedi, hem güldürür hem düşündürür.",
+                2993: "1980'lerin Hawkins kasabasında bir çocuğun gizemli kaybolmasıyla başlayan olaylar, doğaüstü güçleri ve gizli devlet deneylerini gün yüzüne çıkarır.",
+                66:   "Caltech'te çalışan dört tuhaf ama dâhi bilim insanının sosyal hayattaki komik mücadelelerini anlatan, yıllarca izletmeye devam eden bir klasik.",
+                618:  "Breaking Bad'in ödüllü yan hikâyesi: Jimmy McGill'in Saul Goodman'a dönüşümünü, Mike Ehrmantraut ve Albuquerque suç dünyasını mercek altına alır.",
+                216:  "Dâhi büyükbaba Rick ile torunu Morty'nin boyutlar arası çılgın maceralarını anlatan bu animasyon, derin felsefi sorgulamalarla absürt komediyi harmanlıyor."
+            };
+
+            const container = document.getElementById("shows-container");
+            const loader = document.getElementById("loader");
+            const errorMessage = document.getElementById("error-message");
+
+            async function fetchFavoriteShows() {
+                try {
+                    const fetchPromises = showIds.map(id =>
+                        fetch(`https://api.tvmaze.com/shows/${id}`).then(res => {
+                            if (!res.ok) throw new Error("API yanıt vermedi");
+                            return res.json();
+                        })
+                    );
+
+                    const shows = await Promise.all(fetchPromises);
+
+                    loader.style.display = "none";
+                    container.style.display = "flex";
+
+                    shows.forEach(show => {
+                        const col = document.createElement("div");
+                        col.className = "col-12 col-sm-6 col-lg-3";
+
+                        // Türkçe açıklama varsa kullan, yoksa API'den al
+                        const summary = turkishSummaries[show.id]
+                            || (show.summary ? show.summary.replace(/<[^>]*>?/gm, '') : 'Açıklama bulunamadı.');
+
+                        const genresHtml = show.genres.map(genre => `<span class="genre-badge">${genre}</span>`).join('');
+                        const rating = show.rating.average ? `★ ${show.rating.average}` : '★ N/A';
+
+                        col.innerHTML = `
+                            <div class="show-card">
+                                <div class="show-image-container">
+                                    <img src="${show.image ? show.image.original : 'https://via.placeholder.com/210x295'}" alt="${show.name}">
+                                    <div class="show-rating">${rating}</div>
+                                </div>
+                                <div class="show-info">
+                                    <h3 class="show-title">${show.name}</h3>
+                                    <div class="show-genres">${genresHtml}</div>
+                                    <p class="show-summary">${summary}</p>
+                                    <a href="${show.url}" target="_blank" class="show-link">Detayları Gör →</a>
+                                </div>
+                            </div>`;
+                        container.appendChild(col);
+                    });
+
+                } catch (error) {
+                    console.error("Veri çekme hatası:", error);
+                    loader.style.display = "none";
+                    errorMessage.classList.remove("d-none");
+                }
+            }
+
+            fetchFavoriteShows();
+        });
+    </script>
+</body>
+</html>

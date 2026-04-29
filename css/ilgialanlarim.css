@@ -1,0 +1,179 @@
+/* ilgialanlarim.css - İlgi Alanlarım (API) Sayfası Stilleri */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap');
+
+/* ── HEADER ── */
+.api-header {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    border-radius: 20px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.api-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.api-header p {
+    font-family: 'Nunito', sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+}
+
+.api-header p strong {
+    color: #ff6b3d;
+}
+
+.accent-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b3d, #9b59b6);
+    border-radius: 2px;
+    margin: 0 auto 20px;
+}
+
+.badge-api {
+    display: inline-block;
+    background: rgba(255, 107, 61, 0.15);
+    border: 1px solid rgba(255, 107, 61, 0.4);
+    color: #ff6b3d;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+/* ── LOADER ── */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e9ecef;
+    border-top-color: #ff6b3d;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── CARDS ── */
+.show-card {
+    background: #1a1a2e;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.show-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(255, 107, 61, 0.25);
+}
+
+.show-image-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 140%;
+}
+
+.show-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.show-card:hover .show-image-container img {
+    transform: scale(1.05);
+}
+
+.show-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6b3d;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.show-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.show-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.show-genres {
+    margin-bottom: 10px;
+}
+
+.genre-badge {
+    display: inline-block;
+    background: rgba(155, 89, 182, 0.2);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    color: #c39bd3;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 12px;
+    margin-right: 4px;
+    text-transform: uppercase;
+}
+
+.show-summary {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.show-link {
+    display: inline-block;
+    margin-top: 14px;
+    background: linear-gradient(90deg, #ff6b3d, #9b59b6);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.show-link:hover {
+    opacity: 0.85;
+    color: #ffffff;
+}

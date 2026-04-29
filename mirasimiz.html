@@ -4,190 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takımımız - Saint George SC (Addis Ababa)</title>
+    <title>Mirasımız - Ethiopian Coffee FC</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .team-hero {
-            position: relative;
-            padding: 6rem 2rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Addis_Ababa_Stadium_1.jpg/1024px-Addis_Ababa_Stadium_1.jpg') center/cover no-repeat fixed;
-            border-radius: 1rem;
-            color: white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-            margin-bottom: 3rem;
-        }
-        .team-logo {
-            width: 180px;
-            height: auto;
-            margin-top: -90px;
-            border: 5px solid white;
-            border-radius: 50%;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .info-card {
-            border-left: 5px solid #FFC107; /* Sarı/Kırmızı takım renklerine atıf */
-            background-color: #fcfcfc;
-            transition: transform 0.3s;
-        }
-        .info-card:hover {
-            transform: translateX(10px);
-        }
-        .table-custom {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-    </style>
+    <link rel="stylesheet" href="css/mirasimiz.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="body-mirasimiz d-flex flex-column min-vh-100">
 
-    <!-- Menü (Navbar) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Portfolyom</a>
+            <a class="navbar-brand fw-bold" style="color: var(--coffee-gold);" href="index.html">Portfolyom</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Hakkında</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sehrim.html">Şehrim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="mirasimiz.html">Mirasımız</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="iletisim.html">İletişim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Ana İçerik Alanı -->
-    <main class="flex-grow-1 container mt-5 mb-5">
-        
-        <!-- Sayfa Başlığı -->
-        <header class="team-hero text-center shadow-lg">
-            <div class="container position-relative z-index-2">
-                <h1 class="display-3 fw-bold mb-2">SAINT GEORGE S.C.</h1>
-                <p class="lead fw-light fs-4 mb-0">Addis Ababa'nın Gururu - Etiyopya'nın En Köklü Kulübü</p>
-            </div>
-        </header>
-
-        <div class="text-center mb-5 position-relative">
-            <!-- Takım Logosu -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Saint_George_SC_logo.svg/300px-Saint_George_SC_logo.svg.png" alt="Saint George SC Logo" class="team-logo">
+    <!-- Hero Bölümü -->
+    <header class="hero-fullscreen">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">ETHIOPIAN<br>COFFEE</h1>
+            <p class="hero-subtitle mt-3">Addis Ababa'nın Ruhu</p>
         </div>
+        <div class="scroll-indicator">↓</div>
+    </header>
 
-        <div class="row gx-5 mb-5">
-            <!-- Takım Hakkında Bilgi -->
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <h2 class="h3 fw-bold mb-4" style="color: #d32f2f;">⚽ Kulüp Hakkında</h2>
-                <p class="text-muted" style="line-height: 1.8; font-size: 1.1rem;">
-                    <strong>Saint George Spor Kulübü (Amharca: ቅዱስ ጊዮርጊስ ስፖርት ክለብ)</strong>, Etiyopya'nın başkenti Addis Ababa merkezli, ülkenin en ünlü ve en başarılı profesyonel futbol kulübüdür. 1935 yılında, İtalyan faşist işgaline karşı Etiyopya milliyetçiliğinin bir sembolü olarak kurulmuştur.
-                </p>
-                <p class="text-muted" style="line-height: 1.8; font-size: 1.1rem;">
-                    Renkleri sarı ve kırmızı olan kulüp, Etiyopya Premier Ligi'nde mücadele etmektedir ve ülke futbol tarihinin en çok şampiyon olan takımıdır. Addis Ababa'da devasa bir taraftar kitlesine sahiptir ve maçlarını tarihi Addis Ababa Stadyumu'nda oynamaktadır.
-                </p>
+    <!-- Ana İçerik -->
+    <main class="content-section container flex-grow-1">
+        <div class="row align-items-center g-5">
 
-                <div class="mt-4 p-4 info-card rounded shadow-sm">
-                    <h4 class="h5 fw-bold">Neden Saint George SC?</h4>
-                    <p class="mb-0 text-muted">
-                        Sadece bir spor kulübü değil, aynı zamanda şehrin kültürel mirasının önemli bir parçasıdır. Kuruluşu itibariyle bağımsızlık mücadelesini ve yerel halkın dayanışmasını simgeler. Addis Ababa halkı için hafta sonu maçları büyük bir şölen havasında geçer.
-                    </p>
-                </div>
+            <!-- Logo -->
+            <div class="col-lg-4 text-center">
+                <img src="https://static.cdnlogo.com/logos/e/67/ethiopian-coffee-s-c.svg"
+                     alt="Ethiopian Coffee SC Logo"
+                     class="club-logo img-fluid">
             </div>
 
-            <!-- Kısa Bilgiler -->
-            <div class="col-lg-5">
-                <div class="card border-0 shadow-sm table-custom">
-                    <div class="card-header bg-dark text-white fw-bold py-3 text-center">
-                        📋 Künye
+            <!-- Açıklama -->
+            <div class="col-lg-8">
+                <div class="info-box">
+                    <h2 class="mb-4" style="color: var(--coffee-gold); font-size: 2rem;">
+                        Kahve, Tutku ve Futbol
+                    </h2>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #ccc;">
+                        <strong>Ethiopian Coffee Sport Club (የኢትዮጵያ ቡና ስፖርት ክለብ)</strong>, 1976 yılında kurulan ve ülkenin en büyük taraftar kitlelerinden birine sahip olan eşsiz bir spor kulübüdür.
+                    </p>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #ccc;">
+                        Bordo ve altın renklerine gönül veren taraftarlar, futbolu sadece bir oyun değil, Etiyopya'nın en büyük kültürel mirası olan "Kahve"nin birleştirici gücüyle kutlarlar. Özellikle Addis Ababa stadyumunda oynanan maçlar bir festival havasında geçer.
+                    </p>
+
+                    <!-- Kulüp Bilgileri -->
+                    <div class="mt-4 d-flex flex-wrap gap-2">
+                        <span class="badge rounded-pill border border-secondary py-2 px-3 fw-normal">📅 Kuruluş: 1976</span>
+                        <span class="badge rounded-pill border border-secondary py-2 px-3 fw-normal">🏟️ Addis Ababa Stadyumu</span>
+                        <span class="badge rounded-pill border border-secondary py-2 px-3 fw-normal">🎨 Bordo ve Altın</span>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item p-3"><strong>Tam Adı:</strong> Saint George Sports Club</li>
-                        <li class="list-group-item p-3"><strong>Takma Adı:</strong> Feresegnoch (Atlılar)</li>
-                        <li class="list-group-item p-3"><strong>Kuruluş Yılı:</strong> Aralık 1935 (89 Yıl Önce)</li>
-                        <li class="list-group-item p-3"><strong>Stadyum:</strong> Addis Ababa Stadyumu</li>
-                        <li class="list-group-item p-3"><strong>Kapasite:</strong> 35,000 Kişi</li>
-                        <li class="list-group-item p-3"><strong>Lig:</strong> Etiyopya Premier Ligi</li>
-                        <li class="list-group-item p-3"><strong>Renkler:</strong> <span class="badge" style="background-color: #FFC107; color: black;">Sarı</span> <span class="badge" style="background-color: #d32f2f;">Kırmızı</span></li>
-                    </ul>
                 </div>
             </div>
         </div>
 
         <!-- Başarılar Tablosu -->
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
-                <h3 class="fw-bold mb-4 text-center" style="color: #4a5568;">🏆 Kulübün Başarıları</h3>
-                <div class="table-responsive shadow-sm rounded">
-                    <table class="table table-hover table-striped mb-0 align-middle">
-                        <thead class="table-dark">
+                <h2 class="text-center mb-4" style="color: var(--coffee-gold); font-size: 2rem;">Tarihi Başarılar</h2>
+                <div class="table-responsive">
+                    <table class="table glass-table align-middle">
+                        <thead>
                             <tr>
-                                <th scope="col" class="py-3 ps-4">Turnuva</th>
-                                <th scope="col" class="py-3 text-center">Kazanılan Şampiyonluk</th>
-                                <th scope="col" class="py-3">Önemli Yıllar (Örnek)</th>
+                                <th>Kupa / Turnuva</th>
+                                <th class="text-center">Kazanılan Sayı</th>
+                                <th>Önemli Yıllar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="ps-4 fw-bold">Etiyopya Premier Ligi</td>
-                                <td class="text-center fs-5"><span class="badge bg-success rounded-pill">31 Kez</span></td>
-                                <td class="text-muted">1950, 1966, 1999, 2012, 2016, 2022, 2023...</td>
+                                <td class="fw-bold">Etiyopya Premier Ligi</td>
+                                <td class="text-center">
+                                    <span class="badge rounded-pill py-2 px-3" style="background: var(--coffee-gold); color: var(--dark-bg);">2 Şampiyonluk</span>
+                                </td>
+                                <td style="color: #aaa;">1997, 2011</td>
                             </tr>
                             <tr>
-                                <td class="ps-4 fw-bold">Etiyopya Kupası</td>
-                                <td class="text-center fs-5"><span class="badge bg-primary rounded-pill">12 Kez</span></td>
-                                <td class="text-muted">1952, 1993, 1999, 2011, 2016...</td>
+                                <td class="fw-bold">Etiyopya Kupası</td>
+                                <td class="text-center">
+                                    <span class="badge rounded-pill py-2 px-3" style="background: var(--coffee-gold); color: var(--dark-bg);">5 Şampiyonluk</span>
+                                </td>
+                                <td style="color: #aaa;">1988, 1998, 2000, 2003, 2008</td>
                             </tr>
                             <tr>
-                                <td class="ps-4 fw-bold">Etiyopya Süper Kupası</td>
-                                <td class="text-center fs-5"><span class="badge bg-warning text-dark rounded-pill">16 Kez</span></td>
-                                <td class="text-muted">1993, 2001, 2015, 2017...</td>
-                            </tr>
-                            <tr>
-                                <td class="ps-4 fw-bold">Addis Ababa Şehir Kupası</td>
-                                <td class="text-center fs-5"><span class="badge bg-info text-dark rounded-pill">7 Kez</span></td>
-                                <td class="text-muted">2007, 2010, 2013, 2019...</td>
+                                <td class="fw-bold">Etiyopya Süper Kupası</td>
+                                <td class="text-center">
+                                    <span class="badge rounded-pill py-2 px-3" style="background: var(--coffee-gold); color: var(--dark-bg);">4 Şampiyonluk</span>
+                                </td>
+                                <td style="color: #aaa;">1997, 2000, 2008, 2011</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
     </main>
 
-    <!-- Alt Bilgi (Footer) -->
-    <footer class="bg-dark text-white text-center py-3 mt-auto">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 Tüm Hakları Saklıdır. Web Teknolojileri Projesi.</p>
-        </div>
+    <!-- Footer -->
+    <footer class="py-3 text-center" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p class="mb-0 text-muted small">&copy; 2026 Tüm Hakları Saklıdır. Web Teknolojileri Projesi.</p>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

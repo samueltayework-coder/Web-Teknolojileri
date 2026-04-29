@@ -1,0 +1,128 @@
+/* mirasimiz.css - Mirasımız Sayfası Stilleri */
+
+/* Renk Değişkenleri */
+:root {
+    --coffee-gold: #cfa85f;
+    --dark-bg: #121212;
+    --light-text: #f4f4f5;
+}
+
+/* Sayfa Genel Stili */
+body.body-mirasimiz {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(20, 20, 20, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav .nav-link {
+    color: white !important;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.glass-nav .nav-link:hover,
+.glass-nav .nav-link.active {
+    color: var(--coffee-gold) !important;
+}
+
+/* Hero Bölümü */
+.hero-fullscreen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Addis_Ababa_Stadium_1.jpg/1024px-Addis_Ababa_Stadium_1.jpg') center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(18, 18, 18, 0.85);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--coffee-gold);
+    margin-bottom: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--coffee-gold);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+/* İçerik Bölümü */
+.content-section {
+    padding: 80px 0;
+}
+
+.info-box {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.club-logo {
+    width: 220px;
+}
+
+/* Tablo */
+.glass-table {
+    background: transparent;
+    color: white;
+}
+
+.glass-table th,
+.glass-table td {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 16px 10px;
+}
+
+.glass-table th {
+    color: var(--coffee-gold);
+    border-bottom: 2px solid var(--coffee-gold);
+}
+
+/* Animasyonlar */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50%       { transform: translateY(-15px) translateX(-50%); }
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1rem; letter-spacing: 2px; }
+    .info-box { padding: 25px; }
+}
