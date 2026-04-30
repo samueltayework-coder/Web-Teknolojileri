@@ -1,0 +1,202 @@
+/* iletisim.css - İletişim Sayfası Stilleri */
+
+/* Header */
+.contact-header {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8ed9 100%);
+    color: white;
+    padding: 4rem 0;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* İletişim Bilgi Kartları */
+
+.contact-bar {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    padding: 30px 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+
+.contact-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-bar-icon {
+    font-size: 2rem;
+}
+
+.contact-bar-item h5 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2px;
+    font-size: 0.95rem;
+}
+
+.contact-bar-item p {
+    color: #888;
+    margin-bottom: 0;
+    font-size: 0.88rem;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+.contact-card h5 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.4rem;
+}
+
+.contact-card p {
+    color: #666;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Form Kartı */
+.form-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    padding: 40px;
+}
+
+.form-card h2 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.form-card .section-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #11998e;
+    box-shadow: 0 0 0 3px rgba(17, 153, 142, 0.15);
+}
+
+/* Hata stilleri */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+.error-text {
+    color: #dc3545;
+    font-size: 0.82rem;
+    margin-top: 4px;
+    display: none;
+}
+
+.error-text.visible {
+    display: block;
+}
+
+/* Butonlar */
+.btn-js {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+    width: 100%;
+}
+
+.btn-js:hover {
+    opacity: 0.88;
+    color: white;
+}
+
+.btn-vue {
+    background: linear-gradient(135deg, #42b883, #35495e);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+    width: 100%;
+}
+
+.btn-vue:hover {
+    opacity: 0.88;
+    color: white;
+}
+
+.btn-label {
+    font-size: 0.75rem;
+    text-align: center;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Başarı Mesajı */
+.success-message {
+    display: none;
+    background: #d1fae5;
+    border: 1px solid #6ee7b7;
+    color: #065f46;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Divider */
+.form-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 25px 0;
+}
