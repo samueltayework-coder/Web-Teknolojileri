@@ -200,3 +200,25 @@
     border-top: 1px solid #f0f0f0;
     margin: 25px 0;
 }
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .contact-header {
+        padding: 2rem 0;
+    }
+    .contact-header h1 {
+        font-size: 1.8rem;
+    }
+    .form-card {
+        padding: 20px;
+    }
+    .contact-bar {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+    .contact-bar-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}

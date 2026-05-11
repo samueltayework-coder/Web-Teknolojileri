@@ -207,6 +207,19 @@
             align-self: flex-start;
         }
         .show-link:hover { opacity: 0.85; color: #fff; }
+
+        /* Mobil Uyum */
+        @media (max-width: 768px) {
+            .api-header {
+                padding: 30px 15px !important;
+            }
+            .api-header::after {
+                display: none;
+            }
+            .show-image-container img {
+                height: 220px;
+            }
+        }
     </style>
 </head>
 

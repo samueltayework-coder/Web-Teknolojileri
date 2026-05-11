@@ -58,3 +58,22 @@ main {
     background-color: #f8f9fa;
     border-radius: 0 8px 8px 0;
 }
+
+/* --- Mobil Uyum --- */
+@media (max-width: 768px) {
+    .about-header {
+        padding: 2rem 0;
+    }
+    .about-header .display-4 {
+        font-size: 1.8rem;
+    }
+    .profile-img {
+        max-width: 150px !important;
+    }
+    .cv-header {
+        padding: 2rem !important;
+    }
+    .cv-header .display-4 {
+        font-size: 1.8rem;
+    }
+}
