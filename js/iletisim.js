@@ -9,6 +9,7 @@ function validateWithJS() {
     document.querySelectorAll(".form-control, .form-select").forEach(el => el.classList.remove("is-invalid"));
     document.getElementById("js-success").style.display = "none";
 
+
     // Ad Soyad — boş mu?
     const name = document.getElementById("name").value.trim();
     if (!name) {
@@ -76,24 +77,25 @@ createApp({
     data() {
         return {
             form: {
-                name:      "",
-                email:     "",
-                phone:     "",
+                name: "",
+                email: "",
+                phone: "",
                 birthdate: "",
-                gender:    "",
-                subject:   "",
+                gender: "",
+                subject: "",
                 interests: [],
-                message:   "",
-                privacy:   false
+                message: "",
+                privacy: false
             },
-            vueErrors:  {},
+            vueErrors: {},
             vueSuccess: false
         };
     },
     methods: {
         validateWithVue() {
-            this.vueErrors  = {};
+            this.vueErrors = {};
             this.vueSuccess = false;
+
 
             // Ad Soyad
             if (!this.form.name.trim()) {

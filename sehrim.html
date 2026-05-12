@@ -17,27 +17,36 @@
             object-fit: cover;
             border-radius: 10px;
         }
+
         .place-card {
             transition: transform 0.3s ease;
         }
+
         .place-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
         }
+
         .hero-city {
             position: relative;
             padding: 5rem 2rem;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Prunus_mume.JPG') center/cover no-repeat fixed;
+            background: url('img/addis_ababa.jpeg') center/cover no-repeat fixed;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .hero-overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(50, 10, 30, 0.4); /* Düşük opaklıklı koyu mürdüm/siyah, çiçeğin görünmesini sağlar */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(50, 10, 30, 0.4);
+            /* Düşük opaklıklı koyu mürdüm/siyah, çiçeğin görünmesini sağlar */
             z-index: 1;
         }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -48,12 +57,15 @@
             .carousel-item img {
                 height: 250px;
             }
+
             .hero-city {
                 padding: 3rem 1rem;
             }
+
             .hero-city h1 {
                 font-size: 2rem !important;
             }
+
             .hero-city .lead {
                 font-size: 1rem !important;
             }
@@ -101,7 +113,7 @@
 
     <!-- Ana İçerik Alanı -->
     <main class="flex-grow-1 container mt-5 mb-5">
-        
+
         <!-- Sayfa Başlığı (Yeni Stil) -->
         <header class="mb-5 hero-city text-center text-white">
             <div class="hero-overlay"></div>
@@ -109,7 +121,8 @@
                 <h1 class="display-3 fw-bold mb-3" style="letter-spacing: 2px;">ADDIS ABABA</h1>
                 <p class="lead fw-light fs-4 mb-0">Etiyopya'nın Kalbi ve Afrika'nın Başkenti</p>
                 <div class="d-flex justify-content-center mt-4">
-                    <div style="width: 50px; height: 3px; background-color: rgba(255,255,255,0.7); border-radius: 5px;"></div>
+                    <div style="width: 50px; height: 3px; background-color: rgba(255,255,255,0.7); border-radius: 5px;">
+                    </div>
                 </div>
             </div>
         </header>
@@ -120,7 +133,11 @@
                 <div class="card shadow-sm border-0 p-4">
                     <h2 class="h3 fw-bold mb-3" style="color: #4a5568;">🏙️ Şehir Hakkında</h2>
                     <p class="text-muted" style="line-height: 1.8;">
-                        Addis Ababa, Etiyopya'nın başkenti ve en büyük şehridir. Amharca'da "Yeni Çiçek" anlamına gelen bu büyüleyici şehir, aynı zamanda Afrika Birliği'nin merkezine ev sahipliği yaptığı için "Afrika'nın Başkenti" olarak da anılır. Deniz seviyesinden 2.355 metre yükseklikte yer alan Addis Ababa, dünyanın en yüksek başkentlerinden biridir ve yıl boyunca keyifli, ılıman bir iklime sahiptir.
+                        Addis Ababa, Etiyopya'nın başkenti ve en büyük şehridir. Amharca'da "Yeni Çiçek" anlamına gelen
+                        bu büyüleyici şehir, aynı zamanda Afrika Birliği'nin merkezine ev sahipliği yaptığı için
+                        "Afrika'nın Başkenti" olarak da anılır. Deniz seviyesinden 2.355 metre yükseklikte yer alan
+                        Addis Ababa, dünyanın en yüksek başkentlerinden biridir ve yıl boyunca keyifli, ılıman bir
+                        iklime sahiptir.
                     </p>
                     <ul class="list-unstyled mt-3 text-muted">
                         <li><strong>👥 Nüfus:</strong> Yaklaşık 5.4 Milyon (Metropol bölgesi ile birlikte)</li>
@@ -133,38 +150,47 @@
 
         <!-- Gezilecek Yerler (Resim Slider'ı) -->
         <h2 class="h3 fw-bold mb-4 text-center" style="color: #4a5568;">📸 Gezilecek Harika Yerler</h2>
-        
+
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10">
                 <!-- Bootstrap Carousel (Slider) -->
                 <div id="cityCarousel" class="carousel slide shadow" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
                     </div>
-                    
+
                     <!-- SLIDER RESİMLERİ BURAYA EKLENECEK -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://content.palacemuseum.gov.et/uploads/mp3_20250414162808_c438a22e9e.webp" class="d-block w-100" alt="Jubilee Palace">
+                            <img src="https://content.palacemuseum.gov.et/uploads/mp3_20250414162808_c438a22e9e.webp"
+                                class="d-block w-100" alt="Jubilee Palace">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3">
                                 <h5>Jubilee Palace (Eyobeliyu Palace)</h5>
                                 <p>İhtişamlı mimarisiyle ülkenin önemli saraylarından biri.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://liveandletsfly.com/wp-content/uploads/2025/12/Adwa-Victory-Memorial-Addis-Ababa-12.jpeg" class="d-block w-100" alt="Adwa Museum">
+                            <img src="https://liveandletsfly.com/wp-content/uploads/2025/12/Adwa-Victory-Memorial-Addis-Ababa-12.jpeg"
+                                class="d-block w-100" alt="Adwa Museum">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3">
                                 <h5>Adwa Museum</h5>
                                 <p>Etiyopya'nın tarihi zaferini simgeleyen etkileyici müze.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/24/29/45/outside.jpg?w=900&h=500&s=1" class="d-block w-100" alt="Holy Trinity Cathedral">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/24/29/45/outside.jpg?w=900&h=500&s=1"
+                                class="d-block w-100" alt="Holy Trinity Cathedral">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3">
                                 <h5>Holy Trinity Cathedral</h5>
                                 <p>Ortodoks mimarisinin en güzel örneklerinden tarihi bir katedral.</p>
@@ -174,29 +200,34 @@
                             <img src="https://i.imgur.com/rc84LfN.jpeg" class="d-block w-100" alt="Science Museum">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3">
                                 <h5>Science Museum</h5>
-                                <p>Etiyopya'nın modern yüzünü yansıtan etkileyici bir teknoloji ve inovasyon merkezi.</p>
+                                <p>Etiyopya'nın modern yüzünü yansıtan etkileyici bir teknoloji ve inovasyon merkezi.
+                                </p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://ketemajournal.com/wp-content/uploads/2021/07/Entoto-01-1024x666.jpg" class="d-block w-100" alt="Entoto Hill">
+                            <img src="https://ketemajournal.com/wp-content/uploads/2021/07/Entoto-01-1024x666.jpg"
+                                class="d-block w-100" alt="Entoto Hill">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3">
                                 <h5>Entoto Hill</h5>
                                 <p>Addis Ababa'yı kuşbakışı izleyebileceğiniz muhteşem bir zirve.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://pbs.twimg.com/media/GT-fSV-XcAADQIe.jpg" class="d-block w-100" alt="Streets">
+                            <img src="https://pbs.twimg.com/media/GT-fSV-XcAADQIe.jpg" class="d-block w-100"
+                                alt="Streets">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3">
                                 <h5>Modern Streets</h5>
                                 <p>Şehrin modern yüzünü gösteren yeni ve ferah caddeler.</p>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#cityCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#cityCarousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Önceki</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#cityCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#cityCarousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Sonraki</span>
                     </button>
@@ -208,55 +239,67 @@
         <div class="row g-4 mb-5">
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm place-card">
-                    <img src="https://content.palacemuseum.gov.et/uploads/mp3_20250414162808_c438a22e9e.webp" class="card-img-top" alt="Jubilee Palace" style="height: 200px; object-fit: cover;">
+                    <img src="https://content.palacemuseum.gov.et/uploads/mp3_20250414162808_c438a22e9e.webp"
+                        class="card-img-top" alt="Jubilee Palace" style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3">
                         <h4 class="h5 fw-bold text-primary">🏰 Jubilee Palace</h4>
-                        <p class="text-muted small">Eyobeliyu Sarayı olarak da bilinen bu yapı, tarihi ve siyasi önemiyle dikkat çeken ikonik bir mimari eserdir.</p>
+                        <p class="text-muted small">Eyobeliyu Sarayı olarak da bilinen bu yapı, tarihi ve siyasi
+                            önemiyle dikkat çeken ikonik bir mimari eserdir.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm place-card">
-                    <img src="https://liveandletsfly.com/wp-content/uploads/2025/12/Adwa-Victory-Memorial-Addis-Ababa-12.jpeg" class="card-img-top" alt="Adwa Museum" style="height: 200px; object-fit: cover;">
+                    <img src="https://liveandletsfly.com/wp-content/uploads/2025/12/Adwa-Victory-Memorial-Addis-Ababa-12.jpeg"
+                        class="card-img-top" alt="Adwa Museum" style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3">
                         <h4 class="h5 fw-bold text-primary">🏛️ Adwa Museum</h4>
-                        <p class="text-muted small">Etiyopya'nın bağımsızlık mücadelesini ve Adwa Zaferi'ni anlatan çarpıcı ve modern bir anıt müzedir.</p>
+                        <p class="text-muted small">Etiyopya'nın bağımsızlık mücadelesini ve Adwa Zaferi'ni anlatan
+                            çarpıcı ve modern bir anıt müzedir.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm place-card">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/24/29/45/outside.jpg?w=900&h=500&s=1" class="card-img-top" alt="Holy Trinity Cathedral" style="height: 200px; object-fit: cover;">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/24/29/45/outside.jpg?w=900&h=500&s=1"
+                        class="card-img-top" alt="Holy Trinity Cathedral" style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3">
                         <h4 class="h5 fw-bold text-primary">⛪ Holy Trinity Cathedral</h4>
-                        <p class="text-muted small">İhtişamlı freskleri ve mimarisi ile ülkenin en önemli dini yapılarından biridir.</p>
+                        <p class="text-muted small">İhtişamlı freskleri ve mimarisi ile ülkenin en önemli dini
+                            yapılarından biridir.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm place-card">
-                    <img src="https://i.imgur.com/rc84LfN.jpeg" class="card-img-top" alt="Science Museum" style="height: 200px; object-fit: cover;">
+                    <img src="https://i.imgur.com/rc84LfN.jpeg" class="card-img-top" alt="Science Museum"
+                        style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3">
                         <h4 class="h5 fw-bold text-primary">🔬 Science Museum</h4>
-                        <p class="text-muted small">Mimari yapısıyla dikkat çeken, teknoloji ve bilimin harmanlandığı, şehrin en yeni ve göz alıcı müzelerinden biri.</p>
+                        <p class="text-muted small">Mimari yapısıyla dikkat çeken, teknoloji ve bilimin harmanlandığı,
+                            şehrin en yeni ve göz alıcı müzelerinden biri.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm place-card">
-                    <img src="https://ketemajournal.com/wp-content/uploads/2021/07/Entoto-01-1024x666.jpg" class="card-img-top" alt="Entoto Hill" style="height: 200px; object-fit: cover;">
+                    <img src="https://ketemajournal.com/wp-content/uploads/2021/07/Entoto-01-1024x666.jpg"
+                        class="card-img-top" alt="Entoto Hill" style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3">
                         <h4 class="h5 fw-bold text-primary">⛰️ Entoto Hill</h4>
-                        <p class="text-muted small">Şehri çevreleyen okaliptüs ağaçlarıyla dolu ormanlık tepede yürüyüş yapabilir ve tüm başkenti tepeden görebilirsiniz.</p>
+                        <p class="text-muted small">Şehri çevreleyen okaliptüs ağaçlarıyla dolu ormanlık tepede yürüyüş
+                            yapabilir ve tüm başkenti tepeden görebilirsiniz.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm place-card">
-                    <img src="https://pbs.twimg.com/media/GT-fSV-XcAADQIe.jpg" class="card-img-top" alt="Modern Streets" style="height: 200px; object-fit: cover;">
+                    <img src="https://pbs.twimg.com/media/GT-fSV-XcAADQIe.jpg" class="card-img-top" alt="Modern Streets"
+                        style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3">
                         <h4 class="h5 fw-bold text-primary">🛣️ Modern Streets</h4>
-                        <p class="text-muted small">Şehrin çehresini değiştiren, yürüyüş yolları ve bisiklet parkurlarıyla dolu yeni ve ferah caddeler.</p>
+                        <p class="text-muted small">Şehrin çehresini değiştiren, yürüyüş yolları ve bisiklet
+                            parkurlarıyla dolu yeni ve ferah caddeler.</p>
                     </div>
                 </div>
             </div>

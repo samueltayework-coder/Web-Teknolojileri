@@ -1,10 +1,35 @@
+<?php
+// Tanımlı kullanıcı bilgileri (hardcoded)
+$dogru_email = "b241210001@sakarya.edu.tr";
+$dogru_sifre = "b241210001";
+
+// POST verilerini al
+$email = isset($_POST['email']) ? strtolower(trim($_POST['email'])) : '';
+$sifre = isset($_POST['sifre']) ? trim($_POST['sifre']) : '';
+
+// Boş alan kontrolü — HTML çıktısından ÖNCE yönlendirme yapılmalı
+if (empty($email) || empty($sifre)) {
+    header("Location: login.php?hata=2");
+    exit();
+}
+
+// Kullanıcı adı ve şifre karşılaştırması
+if ($email === $dogru_email && $sifre === $dogru_sifre) {
+    $giris_basarili = true;
+    $ogrenci_no = explode('@', $email)[0];
+} else {
+    // Başarısız giriş — hata ile login sayfasına yönlendir
+    header("Location: login.php?hata=1");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Kontrol</title>
+    <title>Giriş Başarılı</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -115,42 +140,13 @@
     <!-- Ana İçerik -->
     <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
 
-        <?php
-        // Tanımlı kullanıcı bilgileri (hardcoded)
-        $dogru_email = "b2412100042@sakarya.edu.tr";
-        $dogru_sifre = "b2412100042";
-
-        // POST verilerini al
-        $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-        $sifre = isset($_POST['sifre']) ? trim($_POST['sifre']) : '';
-
-        // Boş alan kontrolü
-        if (empty($email) || empty($sifre)) {
-            header("Location: login.php?hata=2");
-            exit();
-        }
-
-        // Kullanıcı adı ve şifre karşılaştırması
-        if ($email === $dogru_email && $sifre === $dogru_sifre) {
-            // Başarılı giriş — öğrenci numarasını e-postadan çıkar
-            $ogrenci_no = explode('@', $email)[0];
-        ?>
-
-            <div class="result-card">
-                <div class="success-icon">✅</div>
-                <h1>Hoşgeldiniz!</h1>
-                <div class="student-id"><?php echo htmlspecialchars($ogrenci_no); ?></div>
-                <p>Giriş işleminiz başarıyla tamamlandı. Sisteme öğrenci numaranız ile giriş yaptınız.</p>
-                <a href="index.html" class="btn-home">🏠 Ana Sayfaya Dön</a>
-            </div>
-
-        <?php
-        } else {
-            // Başarısız giriş — hata ile login sayfasına yönlendir
-            header("Location: login.php?hata=1");
-            exit();
-        }
-        ?>
+        <div class="result-card">
+            <div class="success-icon">✅</div>
+            <h1>Hoşgeldiniz!</h1>
+            <div class="student-id"><?php echo htmlspecialchars($ogrenci_no); ?></div>
+            <p>Giriş işleminiz başarıyla tamamlandı. Sisteme öğrenci numaranız ile giriş yaptınız.</p>
+            <a href="index.html" class="btn-home">🏠 Ana Sayfaya Dön</a>
+        </div>
 
     </main>
 

@@ -179,7 +179,7 @@
                 <div class="mb-3">
                     <label class="form-label">E-posta (Kullanıcı Adı)</label>
                     <input type="email" class="form-control" id="email" name="email"
-                        placeholder="b2412100042@sakarya.edu.tr">
+                        placeholder="b241214501@sakarya.edu.tr">
                     <div class="js-error" id="err-email">⚠ Geçerli bir @sakarya.edu.tr e-posta adresi girin.</div>
                 </div>
 

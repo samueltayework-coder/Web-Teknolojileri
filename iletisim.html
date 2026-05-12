@@ -34,7 +34,8 @@
                     <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
                     <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="iletisim.html">İletişim</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                 </ul>
             </div>
@@ -58,13 +59,14 @@
              ============================================================ -->
             <div class="row justify-content-center mb-5" id="contactApp">
                 <div class="col-lg-9">
-                    <div class="form-card">
+                    <form action="iletisim_gonder.php" method="POST" id="phpForm" class="form-card">
                         <h2>Mesaj Gönder</h2>
 
                         <!-- Ad Soyad -->
                         <div class="mb-3">
                             <label class="form-label">Ad Soyad <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" v-model="form.name" placeholder="Adınızı ve soyadınızı girin">
+                            <input type="text" class="form-control" id="name" name="name" v-model="form.name"
+                                placeholder="Adınızı ve soyadınızı girin">
                             <div class="error-text" id="err-name">⚠ Ad soyad boş bırakılamaz.</div>
                             <div class="text-danger small mt-1" v-if="vueErrors.name">⚠ {{ vueErrors.name }}</div>
                         </div>
@@ -72,7 +74,8 @@
                         <!-- E-posta -->
                         <div class="mb-3">
                             <label class="form-label">E-posta <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" v-model="form.email" placeholder="ornek@email.com">
+                            <input type="email" class="form-control" id="email" name="email" v-model="form.email"
+                                placeholder="ornek@email.com">
                             <div class="error-text" id="err-email">⚠ Geçerli bir e-posta adresi girin.</div>
                             <div class="text-danger small mt-1" v-if="vueErrors.email">⚠ {{ vueErrors.email }}</div>
                         </div>
@@ -80,8 +83,10 @@
                         <!-- Telefon -->
                         <div class="mb-3">
                             <label class="form-label">Telefon <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" id="phone" v-model="form.phone" placeholder="05XX XXX XX XX">
-                            <div class="error-text" id="err-phone">⚠ Telefon numarası yalnızca rakamlardan oluşmalı ve 10-11 haneli olmalıdır.</div>
+                            <input type="tel" class="form-control" id="phone" name="phone" v-model="form.phone"
+                                placeholder="05XX XXX XX XX">
+                            <div class="error-text" id="err-phone">⚠ Telefon numarası yalnızca rakamlardan oluşmalı ve
+                                10-11 haneli olmalıdır.</div>
                             <div class="text-danger small mt-1" v-if="vueErrors.phone">⚠ {{ vueErrors.phone }}</div>
                         </div>
 
@@ -90,7 +95,8 @@
                         <!-- Doğum Tarihi -->
                         <div class="mb-3">
                             <label class="form-label">Doğum Tarihi</label>
-                            <input type="date" class="form-control" id="birthdate" v-model="form.birthdate">
+                            <input type="date" class="form-control" id="birthdate" name="birthdate"
+                                v-model="form.birthdate">
                         </div>
 
                         <!-- Cinsiyet (Radio) -->
@@ -98,11 +104,13 @@
                             <label class="form-label">Cinsiyet</label>
                             <div class="d-flex gap-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="male" value="Erkek" v-model="form.gender">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="Erkek"
+                                        v-model="form.gender">
                                     <label class="form-check-label" for="male">Erkek</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="female" value="Kadın" v-model="form.gender">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="Kadın"
+                                        v-model="form.gender">
                                     <label class="form-check-label" for="female">Kadın</label>
                                 </div>
                             </div>
@@ -111,7 +119,7 @@
                         <!-- Konu (Select) -->
                         <div class="mb-3">
                             <label class="form-label">Konu <span class="text-danger">*</span></label>
-                            <select class="form-select" id="subject" v-model="form.subject">
+                            <select class="form-select" id="subject" name="subject" v-model="form.subject">
                                 <option value="">-- Konu Seçin --</option>
                                 <option value="isbirligi">İş Birliği Teklifi</option>
                                 <option value="proje">Proje Hakkında</option>
@@ -127,19 +135,23 @@
                             <label class="form-label">İlgi Alanlarınız</label>
                             <div class="d-flex flex-wrap gap-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="cb-web" value="Web Geliştirme" v-model="form.interests">
+                                    <input class="form-check-input" type="checkbox" id="cb-web" name="interests[]"
+                                        value="Web Geliştirme" v-model="form.interests">
                                     <label class="form-check-label" for="cb-web">Web Geliştirme</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="cb-mobile" value="Mobil Uygulama" v-model="form.interests">
+                                    <input class="form-check-input" type="checkbox" id="cb-mobile" name="interests[]"
+                                        value="Mobil Uygulama" v-model="form.interests">
                                     <label class="form-check-label" for="cb-mobile">Mobil Uygulama</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="cb-ai" value="Yapay Zeka" v-model="form.interests">
+                                    <input class="form-check-input" type="checkbox" id="cb-ai" name="interests[]"
+                                        value="Yapay Zeka" v-model="form.interests">
                                     <label class="form-check-label" for="cb-ai">Yapay Zeka</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="cb-design" value="Tasarım" v-model="form.interests">
+                                    <input class="form-check-input" type="checkbox" id="cb-design" name="interests[]"
+                                        value="Tasarım" v-model="form.interests">
                                     <label class="form-check-label" for="cb-design">Tasarım</label>
                                 </div>
                             </div>
@@ -148,7 +160,8 @@
                         <!-- Mesaj -->
                         <div class="mb-3">
                             <label class="form-label">Mesaj <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="message" v-model="form.message" rows="5" placeholder="Mesajınızı buraya yazın..."></textarea>
+                            <textarea class="form-control" id="message" name="message" v-model="form.message" rows="5"
+                                placeholder="Mesajınızı buraya yazın..."></textarea>
                             <div class="error-text" id="err-message">⚠ Mesaj boş bırakılamaz.</div>
                             <div class="text-danger small mt-1" v-if="vueErrors.message">⚠ {{ vueErrors.message }}</div>
                         </div>
@@ -168,23 +181,30 @@
                                     Kişisel verilerimin işlenmesine onay veriyorum. <span class="text-danger">*</span>
                                 </label>
                             </div>
-                            <div class="error-text" id="err-privacy">⚠ Devam etmek için gizlilik onayı vermelisiniz.</div>
+                            <div class="error-text" id="err-privacy">⚠ Devam etmek için gizlilik onayı vermelisiniz.
+                            </div>
                             <div class="text-danger small mt-1" v-if="vueErrors.privacy">⚠ {{ vueErrors.privacy }}</div>
                         </div>
 
-                        <!-- İKİ BUTON -->
+                        <!-- ÜÇ BUTON -->
                         <div class="row g-3">
-                            <div class="col-md-6">
-                                <button class="btn btn-js" onclick="validateWithJS()">
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-js" onclick="validateWithJS()">
                                     Gönder (JavaScript)
                                 </button>
                                 <p class="btn-label">Vanilla JS ile doğrulama</p>
                             </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-vue" @click="validateWithVue">
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-vue" @click="validateWithVue">
                                     Gönder (Vue.js)
                                 </button>
                                 <p class="btn-label">Vue.js ile doğrulama</p>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-php">
+                                    Gönder (PHP)
+                                </button>
+                                <p class="btn-label">Sunucu tarafı (PHP) işleme</p>
                             </div>
                         </div>
 
@@ -192,11 +212,11 @@
                         <div class="success-message" id="js-success">
                             ✅ Mesajınız JavaScript doğrulamasıyla başarıyla gönderildi!
                         </div>
-                        <div class="success-message" id="vue-success" v-if="vueSuccess">
+                        <div class="success-message" id="vue-success" v-if="vueSuccess" style="display: block;">
                             ✅ Mesajınız Vue.js doğrulamasıyla başarıyla gönderildi!
                         </div>
 
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -222,7 +242,8 @@
                 <div class="contact-bar-icon">💼</div>
                 <div>
                     <h5>LinkedIn</h5>
-                    <p><a href="https://www.linkedin.com/in/samuel-tayework-tessera-3944bb24b" target="_blank">linkedin.com/in/samuel-tayework</a></p>
+                    <p><a href="https://www.linkedin.com/in/samuel-tayework-tessera-3944bb24b"
+                            target="_blank">linkedin.com/in/samuel-tayework</a></p>
                 </div>
             </div>
         </div>
